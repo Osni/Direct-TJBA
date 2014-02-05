@@ -7,5 +7,8 @@ namespace Direct_TJBA.Models
 {
     public class Ponto
     {
+        public int Id { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
 }
