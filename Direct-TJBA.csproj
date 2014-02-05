@@ -226,6 +226,7 @@
     <Compile Include="Helper\NHibernateHelper.cs" />
     <Compile Include="Interfaces\IDao.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Ponto.cs" />
     <Compile Include="Models\PontosReferencia.cs" />
     <Compile Include="Models\Referencia.cs" />
     <Compile Include="Models\TipoReferencia.cs" />
