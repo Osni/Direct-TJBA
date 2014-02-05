@@ -29,14 +29,23 @@ namespace Direct_TJBA.Filters
         //}
         public override void OnResultExecuted(ResultExecutedContext context)
         {
-            if (context.Exception == null)
+            try
             {
-                this.session.Transaction.Commit();
+                if (context.Exception == null)
+                {
+                    this.session.Transaction.Commit();
+                }
+                else
+                {
+                    this.session.Transaction.Rollback();
+                }
             }
-            else
+            catch (Exception)
             {
-                this.session.Transaction.Rollback();
+                
+                throw;
             }
+
             this.session.Close();
         }
     }

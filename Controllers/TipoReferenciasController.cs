@@ -97,9 +97,8 @@ namespace Direct_TJBA.Controllers
 
         public ActionResult Delete(int id)
         {
-            TipoReferencia tipo = dao.BuscaPorId(id);
-            dao.Deleta(tipo);
-            return View();
+            TipoReferencia tipo = dao.BuscaPorId(id);            
+            return View(tipo);
         }
 
         //

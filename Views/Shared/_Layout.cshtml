@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -13,6 +14,7 @@
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                                         
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -20,10 +22,21 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Tipos de Referencias", "Index", "TipoReferencias")</li>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>                           
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownCommonMenu" data-toggle="dropdown">Opções</a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu">
+                                    <li role="menuitem" class="nav-header">Cadastros</li>
+                                    <li role="menuitem">@Html.ActionLink("Referencias", "Index", "Referencias")</li>
+                                    <li role="menuitem">@Html.ActionLink("Tipos de Referencias", "Index", "TipoReferencias")</li>
+                                    <li role="menuitem" class="disabled">@Html.ActionLink("Item 2 (disabled)", "Index", "Home")</li>
+                                    <li role="menuitem" class="divider"></li>
+                                    <li role="menuitem" class="nav-header">Mapas</li>
+                                    <li role="menuitem">@Html.ActionLink("Item 3", "Index", "Home")</li>
+                                </ul>
+                            </li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li> 
                         </ul>
                     </nav>
                 </div>
@@ -43,7 +56,7 @@
             </div>
         </footer>
 
-        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jquery")        
         @RenderSection("scripts", required: false)
     </body>
 </html>
