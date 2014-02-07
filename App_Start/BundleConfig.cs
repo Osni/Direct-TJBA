@@ -15,6 +15,9 @@ namespace Direct_TJBA
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/pontos").Include(
+                        "~/Scripts/pontos.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
@@ -25,7 +28,8 @@ namespace Direct_TJBA
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                        "~/Content/site.css", 
+                        "~/Content/Site.css",
+                         "~/Content/Estilos.css",
                         "~/Content/bootstrap.css", 
                         "~/Content/bootstrap-theme.css"));
 

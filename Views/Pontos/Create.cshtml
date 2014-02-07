@@ -1,0 +1,50 @@
+﻿@model Direct_TJBA.Models.Ponto
+
+@{
+    ViewBag.Title = "Create";
+}
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Ponto</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Referencia)
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.Referencia.Id)
+            @Html.DropDownListFor(model => model.Referencia.Id, new SelectList(ViewBag.Referencias, "Id", "Descricao"))
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LatLng)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LatLng)
+            @Html.ValidationMessageFor(model => model.LatLng)
+        </div>
+        <div id="pontos"></div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<input type="button" value="Limpar Marcações" name="Limpar" id="limpar" onclick="deleteOverlays();" />
+<div id="map_canvas" style="height: 600px;"></div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/pontos")
+    
+}

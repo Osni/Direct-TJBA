@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Direct-TJBA" namespace="Direct_TJBA.Models">
+  <class name="Ponto" table="Ponto" dynamic-update="true">
+    <id name="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="LatLng" />
+    <many-to-one name="Referencia" column="ReferenciaId" class="Referencia" fetch="join" />
+  </class>
+</hibernate-mapping>
