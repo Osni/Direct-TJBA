@@ -10,4 +10,4 @@ _ReSharper.*
 *.sln.cache
 
 #Configurações
-web.config
+#web.config
